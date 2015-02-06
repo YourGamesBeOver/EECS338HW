@@ -1,0 +1,42 @@
+[PARENT] Current working directory is /home/steven/eecs338/hw1
+[PARENT] Current user is steven
+[PARENT] I am currently running under user ID 1000, in group 1000, and effectively running under user 1000 in group 1000.
+Let's try some forks...
+
+[PARENT] Forking first child...
+[PARENT] Child process successfully spawned with PID 4975
+[PARENT] Forking second child...
+[PARENT] Child process successfully spawned with PID 4976
+[PARENT] Waiting for children to terminate...
+[PARENT] Children remaining: 2
+[CHILD 0] Hello! I'm Child 0, my process ID is 4975, my parent's is 4974
+[CHILD 0] I am currently running under user ID 1000, in group 1000, and effectively running under user 1000 in group 1000.
+[CHILD 1] Hello! I'm Child 1, my process ID is 4976, my parent's is 4974
+[CHILD 1] I am currently running under user ID 1000, in group 1000, and effectively running under user 1000 in group 1000.
+
+[CHILD 0] I calculate that F_1 is 1.
+[CHILD 1] I calculate that F_2 is 1.
+[CHILD 0] I calculate that F_3 is 2.
+[CHILD 1] I calculate that F_4 is 3.
+[CHILD 0] I calculate that F_5 is 5.
+[CHILD 1] I calculate that F_6 is 8.
+[CHILD 0] I calculate that F_7 is 13.
+[CHILD 1] I calculate that F_8 is 21.
+[CHILD 0] I calculate that F_9 is 34.
+[CHILD 1] I calculate that F_10 is 55.
+[CHILD 0] Terminating at Thu Feb  5 22:41:44 2015
+
+[CHILD 0] User time used: 96, System time used: 0.
+[PARENT] A child terminated!
+[PARENT] Child with pid 4975 terminated with exit status 0.
+[PARENT] Children remaining: 1
+[CHILD 1] Terminating at Thu Feb  5 22:41:45 2015
+
+[CHILD 1] User time used: 95, System time used: 0.
+[PARENT] A child terminated!
+[PARENT] Child with pid 4976 terminated with exit status 0.
+[PARENT] No children remaining, terminating...
+[PARENT] Terminating at Thu Feb  5 22:41:46 2015
+
+[PARENT] User time used: 96, System time used: 0.
+
