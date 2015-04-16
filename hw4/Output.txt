@@ -1,0 +1,390 @@
+steven@UBLADE:~/eecs338/hw4$ make test
+make[1]: Entering directory `/home/steven/eecs338/hw4'
+make[1]: Leaving directory `/home/steven/eecs338/hw4'
+make magic
+make[1]: Entering directory `/home/steven/eecs338/hw4'
+cc  -g -Wall -o main main.c utils.c
+make[1]: Leaving directory `/home/steven/eecs338/hw4'
+# Test 1: six westbound cars are sent, then two eastbound cars,  the last car to cross should be westbound
+./main WWWWWWEE
+[PARENT] Hello world, my PID is 32675.
+[PARENT] processing arguments: "WWWWWWEE"
+
+[PARENT] fork a westbound car!
+[PARENT] fork a westbound car!
+[PARENT] fork a westbound car!
+[0W] Hello, I am a successfully forked westbound child, my PID is 32676!
+[PARENT] fork a westbound car!
+[0W] I have arrived at the bridge and am grabbing the mutex
+[0W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[0W] I am done thinking and am now crossing the bridge!
+[1W] Hello, I am a successfully forked westbound child, my PID is 32677!
+[PARENT] fork a westbound car!
+[2W] Hello, I am a successfully forked westbound child, my PID is 32678!
+[PARENT] fork a westbound car!
+[1W] I have arrived at the bridge and am grabbing the mutex
+[PARENT] fork an eastbound car!
+[2W] I have arrived at the bridge and am grabbing the mutex
+[1W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[PARENT] fork an eastbound car!
+[1W] I am done thinking and am now crossing the bridge!
+[2W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[4W] Hello, I am a successfully forked westbound child, my PID is 32680!
+[5W] Hello, I am a successfully forked westbound child, my PID is 32681!
+[3W] Hello, I am a successfully forked westbound child, my PID is 32679!
+[4W] I have arrived at the bridge and am grabbing the mutex
+[5W] I have arrived at the bridge and am grabbing the mutex
+[2W] I am done thinking and am now crossing the bridge!
+[4W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[3W] I have arrived at the bridge and am grabbing the mutex
+[PARENT] 8 children forked, waiting for them to terminate!
+
+[4W] I am done thinking and am now crossing the bridge!
+[6E] Hello, I am a successfully forked eastbound child, my PID is 32682!
+[5W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[6E] I have arrived at the bridge and am grabbing the mutex
+[3W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[7E] Hello, I am a successfully forked eastbound child, my PID is 32683!
+[6E] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[7E] I have arrived at the bridge and am grabbing the mutex
+[7E] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[0W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[0W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[0W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[5W] I am done thinking and am now crossing the bridge!
+[1W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[1W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[1W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[2W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[4W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[2W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[2W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[4W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[4W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[5W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[5W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[5W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[6E] I am done thinking and am now crossing the bridge!
+[6E] I have arrived at the other end of the bridge and am now waiting for the mutex
+[6E] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[6E] It has been quite the adventure, I think my bridge-crossing days are finally over
+[7E] I am done thinking and am now crossing the bridge!
+[7E] I have arrived at the other end of the bridge and am now waiting for the mutex
+[7E] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[7E] It has been quite the adventure, I think my bridge-crossing days are finally over
+[3W] I am done thinking and am now crossing the bridge!
+[3W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[3W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[3W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[PARENT] all children have terminated, cleaning up...
+#
+#
+# Test 2: one eastbound car is send, then seven westbound cars, then an eastbound car.  The last car should be make it just in time to cross
+./main E1WWWWWWWE
+[PARENT] Hello world, my PID is 32688.
+[PARENT] processing arguments: "E1WWWWWWWE"
+
+[PARENT] fork an eastbound car!
+[PARENT] sleeping for 1 seconds
+[0E] Hello, I am a successfully forked eastbound child, my PID is 32689!
+[0E] I have arrived at the bridge and am grabbing the mutex
+[0E] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[0E] I am done thinking and am now crossing the bridge!
+[PARENT] fork a westbound car!
+[PARENT] fork a westbound car!
+[1W] Hello, I am a successfully forked westbound child, my PID is 32690!
+[1W] I have arrived at the bridge and am grabbing the mutex
+[PARENT] fork a westbound car!
+[2W] Hello, I am a successfully forked westbound child, my PID is 32691!
+[1W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[2W] I have arrived at the bridge and am grabbing the mutex
+[2W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[PARENT] fork a westbound car!
+[3W] Hello, I am a successfully forked westbound child, my PID is 32692!
+[PARENT] fork a westbound car!
+[3W] I have arrived at the bridge and am grabbing the mutex
+[3W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[4W] Hello, I am a successfully forked westbound child, my PID is 32693!
+[4W] I have arrived at the bridge and am grabbing the mutex
+[PARENT] fork a westbound car!
+[4W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[PARENT] fork a westbound car!
+[5W] Hello, I am a successfully forked westbound child, my PID is 32694!
+[5W] I have arrived at the bridge and am grabbing the mutex
+[5W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[6W] Hello, I am a successfully forked westbound child, my PID is 32695!
+[6W] I have arrived at the bridge and am grabbing the mutex
+[6W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[PARENT] fork an eastbound car!
+[7W] Hello, I am a successfully forked westbound child, my PID is 32696!
+[PARENT] 9 children forked, waiting for them to terminate!
+
+[7W] I have arrived at the bridge and am grabbing the mutex
+[7W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[8E] Hello, I am a successfully forked eastbound child, my PID is 32697!
+[8E] I have arrived at the bridge and am grabbing the mutex
+[8E] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[8E] I am done thinking and am now crossing the bridge!
+[0E] I have arrived at the other end of the bridge and am now waiting for the mutex
+[0E] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[0E] It has been quite the adventure, I think my bridge-crossing days are finally over
+[8E] I have arrived at the other end of the bridge and am now waiting for the mutex
+[8E] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[8E] It has been quite the adventure, I think my bridge-crossing days are finally over
+[1W] I am done thinking and am now crossing the bridge!
+[1W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[1W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[1W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[2W] I am done thinking and am now crossing the bridge!
+[2W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[2W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[2W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[3W] I am done thinking and am now crossing the bridge!
+[3W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[3W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[3W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[4W] I am done thinking and am now crossing the bridge!
+[4W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[4W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[4W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[5W] I am done thinking and am now crossing the bridge!
+[5W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[5W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[5W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[6W] I am done thinking and am now crossing the bridge!
+[6W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[6W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[6W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[7W] I am done thinking and am now crossing the bridge!
+[7W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[7W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[7W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[PARENT] all children have terminated, cleaning up...
+#
+#
+# Test 3: alternates sending west and east cars, all the west cars should go, then all the eastbound ones
+./main WEWEWEWE
+[PARENT] Hello world, my PID is 32701.
+[PARENT] processing arguments: "WEWEWEWE"
+
+[PARENT] fork a westbound car!
+[PARENT] fork an eastbound car!
+[PARENT] fork a westbound car!
+[0W] Hello, I am a successfully forked westbound child, my PID is 32702!
+[1E] Hello, I am a successfully forked eastbound child, my PID is 32703!
+[PARENT] fork an eastbound car!
+[1E] I have arrived at the bridge and am grabbing the mutex
+[0W] I have arrived at the bridge and am grabbing the mutex
+[1E] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[1E] I am done thinking and am now crossing the bridge!
+[PARENT] fork a westbound car!
+[0W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[PARENT] fork an eastbound car!
+[2W] Hello, I am a successfully forked westbound child, my PID is 32704!
+[2W] I have arrived at the bridge and am grabbing the mutex
+[2W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[PARENT] fork a westbound car!
+[4W] Hello, I am a successfully forked westbound child, my PID is 32706!
+[4W] I have arrived at the bridge and am grabbing the mutex
+[4W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[PARENT] fork an eastbound car!
+[3E] Hello, I am a successfully forked eastbound child, my PID is 32705!
+[5E] Hello, I am a successfully forked eastbound child, my PID is 32707!
+[3E] I have arrived at the bridge and am grabbing the mutex
+[5E] I have arrived at the bridge and am grabbing the mutex
+[3E] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[PARENT] 8 children forked, waiting for them to terminate!
+
+[3E] I am done thinking and am now crossing the bridge!
+[5E] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[6W] Hello, I am a successfully forked westbound child, my PID is 32708!
+[5E] I am done thinking and am now crossing the bridge!
+[6W] I have arrived at the bridge and am grabbing the mutex
+[6W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[7E] Hello, I am a successfully forked eastbound child, my PID is 32709!
+[7E] I have arrived at the bridge and am grabbing the mutex
+[7E] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[7E] I am done thinking and am now crossing the bridge!
+[1E] I have arrived at the other end of the bridge and am now waiting for the mutex
+[1E] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[1E] It has been quite the adventure, I think my bridge-crossing days are finally over
+[3E] I have arrived at the other end of the bridge and am now waiting for the mutex
+[3E] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[3E] It has been quite the adventure, I think my bridge-crossing days are finally over
+[5E] I have arrived at the other end of the bridge and am now waiting for the mutex
+[5E] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[5E] It has been quite the adventure, I think my bridge-crossing days are finally over
+[7E] I have arrived at the other end of the bridge and am now waiting for the mutex
+[7E] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[7E] It has been quite the adventure, I think my bridge-crossing days are finally over
+[0W] I am done thinking and am now crossing the bridge!
+[0W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[0W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[0W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[2W] I am done thinking and am now crossing the bridge!
+[2W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[2W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[2W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[4W] I am done thinking and am now crossing the bridge!
+[4W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[4W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[4W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[6W] I am done thinking and am now crossing the bridge!
+[6W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[6W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[6W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[PARENT] all children have terminated, cleaning up...
+#
+#
+# Test 4: misc test
+./main eeeee1w1e9w
+[PARENT] Hello world, my PID is 32713.
+[PARENT] processing arguments: "eeeee1w1e9w"
+
+[PARENT] fork an eastbound car!
+[PARENT] fork an eastbound car!
+[PARENT] fork an eastbound car!
+[0E] Hello, I am a successfully forked eastbound child, my PID is 32714!
+[PARENT] fork an eastbound car!
+[1E] Hello, I am a successfully forked eastbound child, my PID is 32715!
+[0E] I have arrived at the bridge and am grabbing the mutex
+[1E] I have arrived at the bridge and am grabbing the mutex
+[0E] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[0E] I am done thinking and am now crossing the bridge!
+[PARENT] fork an eastbound car!
+[1E] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[1E] I am done thinking and am now crossing the bridge!
+[2E] Hello, I am a successfully forked eastbound child, my PID is 32716!
+[2E] I have arrived at the bridge and am grabbing the mutex
+[PARENT] sleeping for 1 seconds
+[2E] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[2E] I am done thinking and am now crossing the bridge!
+[3E] Hello, I am a successfully forked eastbound child, my PID is 32717!
+[4E] Hello, I am a successfully forked eastbound child, my PID is 32718!
+[3E] I have arrived at the bridge and am grabbing the mutex
+[3E] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[4E] I have arrived at the bridge and am grabbing the mutex
+[3E] I am done thinking and am now crossing the bridge!
+[4E] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[PARENT] fork a westbound car!
+[PARENT] sleeping for 1 seconds
+[5W] Hello, I am a successfully forked westbound child, my PID is 32719!
+[5W] I have arrived at the bridge and am grabbing the mutex
+[5W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[2E] I have arrived at the other end of the bridge and am now waiting for the mutex
+[0E] I have arrived at the other end of the bridge and am now waiting for the mutex
+[1E] I have arrived at the other end of the bridge and am now waiting for the mutex
+[2E] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[2E] It has been quite the adventure, I think my bridge-crossing days are finally over
+[3E] I have arrived at the other end of the bridge and am now waiting for the mutex
+[4E] I am done thinking and am now crossing the bridge!
+[0E] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[0E] It has been quite the adventure, I think my bridge-crossing days are finally over
+[1E] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[1E] It has been quite the adventure, I think my bridge-crossing days are finally over
+[3E] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[3E] It has been quite the adventure, I think my bridge-crossing days are finally over
+[PARENT] fork an eastbound car!
+[PARENT] sleeping for 9 seconds
+[6E] Hello, I am a successfully forked eastbound child, my PID is 32720!
+[6E] I have arrived at the bridge and am grabbing the mutex
+[6E] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[4E] I have arrived at the other end of the bridge and am now waiting for the mutex
+[4E] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[4E] It has been quite the adventure, I think my bridge-crossing days are finally over
+[5W] I am done thinking and am now crossing the bridge!
+[5W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[5W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[5W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[6E] I am done thinking and am now crossing the bridge!
+[6E] I have arrived at the other end of the bridge and am now waiting for the mutex
+[6E] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[6E] It has been quite the adventure, I think my bridge-crossing days are finally over
+[PARENT] fork a westbound car!
+[PARENT] 8 children forked, waiting for them to terminate!
+
+[7W] Hello, I am a successfully forked westbound child, my PID is 32721!
+[7W] I have arrived at the bridge and am grabbing the mutex
+[7W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[7W] I am done thinking and am now crossing the bridge!
+[7W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[7W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[7W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[PARENT] all children have terminated, cleaning up...
+#
+#
+# Test 5: misc test
+./main eee1www3ew
+[PARENT] Hello world, my PID is 32725.
+[PARENT] processing arguments: "eee1www3ew"
+
+[PARENT] fork an eastbound car!
+[PARENT] fork an eastbound car!
+[PARENT] fork an eastbound car!
+[0E] Hello, I am a successfully forked eastbound child, my PID is 32726!
+[1E] Hello, I am a successfully forked eastbound child, my PID is 32727!
+[0E] I have arrived at the bridge and am grabbing the mutex
+[PARENT] sleeping for 1 seconds
+[0E] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[1E] I have arrived at the bridge and am grabbing the mutex
+[0E] I am done thinking and am now crossing the bridge!
+[2E] Hello, I am a successfully forked eastbound child, my PID is 32728!
+[1E] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[1E] I am done thinking and am now crossing the bridge!
+[2E] I have arrived at the bridge and am grabbing the mutex
+[2E] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[2E] I am done thinking and am now crossing the bridge!
+[PARENT] fork a westbound car!
+[PARENT] fork a westbound car!
+[PARENT] fork a westbound car!
+[3W] Hello, I am a successfully forked westbound child, my PID is 32729!
+[PARENT] sleeping for 3 seconds
+[3W] I have arrived at the bridge and am grabbing the mutex
+[3W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[4W] Hello, I am a successfully forked westbound child, my PID is 32730!
+[4W] I have arrived at the bridge and am grabbing the mutex
+[5W] Hello, I am a successfully forked westbound child, my PID is 32731!
+[4W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[5W] I have arrived at the bridge and am grabbing the mutex
+[5W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[0E] I have arrived at the other end of the bridge and am now waiting for the mutex
+[1E] I have arrived at the other end of the bridge and am now waiting for the mutex
+[0E] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[0E] It has been quite the adventure, I think my bridge-crossing days are finally over
+[1E] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[1E] It has been quite the adventure, I think my bridge-crossing days are finally over
+[2E] I have arrived at the other end of the bridge and am now waiting for the mutex
+[2E] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[2E] It has been quite the adventure, I think my bridge-crossing days are finally over
+[3W] I am done thinking and am now crossing the bridge!
+[PARENT] fork an eastbound car!
+[3W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[3W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[3W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[4W] I am done thinking and am now crossing the bridge!
+[PARENT] fork a westbound car!
+[PARENT] 8 children forked, waiting for them to terminate!
+
+[6E] Hello, I am a successfully forked eastbound child, my PID is 32732!
+[6E] I have arrived at the bridge and am grabbing the mutex
+[6E] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[7W] Hello, I am a successfully forked westbound child, my PID is 32733!
+[7W] I have arrived at the bridge and am grabbing the mutex
+[7W] I have successfully grabbed the mutex and am thinking about crossing the bridge
+[7W] I am done thinking and am now crossing the bridge!
+[4W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[4W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[4W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[5W] I am done thinking and am now crossing the bridge!
+[7W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[7W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[7W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[5W] I have arrived at the other end of the bridge and am now waiting for the mutex
+[5W] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[5W] It has been quite the adventure, I think my bridge-crossing days are finally over
+[6E] I am done thinking and am now crossing the bridge!
+[6E] I have arrived at the other end of the bridge and am now waiting for the mutex
+[6E] Having successfully grabbed the mutex, I am now thinking about signaling my fellow cars to cross
+[6E] It has been quite the adventure, I think my bridge-crossing days are finally over
+[PARENT] all children have terminated, cleaning up...
+

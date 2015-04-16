@@ -1,0 +1,66 @@
+This is Client 1's output from a test run
+You'll have to look at Output-Server.txt in order to see the order of events in relation to client 0
+
+steven@UBLADE:~/eecs338/hw6$ ./Client localhost
+I am a client running on UBLADE
+Connecting to localhost...
+Sending initial Start() command...
+Recieved user id 1 from the server.
+
+Ready. Enter a command, or 'help' for a list of commands.
+>retrieve 0
+Sending retrieve command with messageNumber=0
+Response: Success
+	Message: hello again!
+>listall
+Invaid command; enter 'help' for a list of commands.
+>list
+Sending list_all command
+Response:
+	0: "hello again!"
+>quit
+Sending quit command
+Response: Success
+steven@UBLADE:~/eecs338/hw6$ ./Client localhost
+I am a client running on UBLADE
+Connecting to localhost...
+Sending initial Start() command...
+Recieved user id 1 from the server.
+
+Ready. Enter a command, or 'help' for a list of commands.
+>insert 2 msg2
+Sending insert command with messageNumber=2, and message=msg2
+Response: Success
+>insert 7 msg7
+Sending insert command with messageNumber=7, and message=msg7
+Response: Success
+>list
+Sending list_all command
+Response:
+	2: "msg2"
+	7: "msg7"
+>retrieve 3
+Sending retrieve command with messageNumber=3
+Response: Error: Permission Denied; attepmted to access a message that belongs to another user
+>quit
+Sending quit command
+Response: Success
+steven@UBLADE:~/eecs338/hw6$ ./Client localhost
+I am a client running on UBLADE
+Connecting to localhost...
+Sending initial Start() command...
+Recieved user id 1 from the server.
+
+Ready. Enter a command, or 'help' for a list of commands.
+>list
+Sending list_all command
+Response:
+	2: "msg2"
+	7: "msg7"
+>delete 2
+Sending delete command with messageNumber=2
+Response: Success
+>quit
+Sending quit command
+Response: Success
+

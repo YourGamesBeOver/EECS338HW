@@ -1,0 +1,9 @@
+magic:
+	gcc -pthread -Wall -o hw5 hw5.c
+	
+run:
+	make magic
+	./hw5
+	
+clean:
+	rm -f ./hw5

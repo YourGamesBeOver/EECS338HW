@@ -1,0 +1,46 @@
+This is the server's output of a sample run
+
+steven@UBLADE:~/eecs338/hw6$ ./Server
+1429210183: New user! Name=UBLADE
+1429210183: 	User UBLADE(0) successfully connectd!
+1429210193: User UBLADE(0) inserted a message at unused index 0 with content "msg0"
+1429210201: User UBLADE(0) inserted a message at unused index 12 with content "msg12"
+1429210208: User UBLADE(0) attempted to insert a message with an invalid index (100).
+1429210219: User UBLADE(0) inserted a message at unused index 3 with content "msg3"
+1429210223: User UBLADE(0) has requested all messages.
+1429210223: 	Sending user UBLADE(0) 3 message(s).
+1429210238: New user! Name=UBLADE
+1429210238: 	User UBLADE(1) successfully connectd!
+1429210252: User UBLADE(1) inserted a message at unused index 2 with content "msg2"
+1429210258: User UBLADE(1) inserted a message at unused index 7 with content "msg7"
+1429210268: User UBLADE(1) has requested all messages.
+1429210268: 	Sending user UBLADE(1) 2 message(s).
+1429210273: User UBLADE(0) has requested all messages.
+1429210273: 	Sending user UBLADE(0) 3 message(s).
+1429210359: User UBLADE(0) tried to delete message 2, but it belongs to user 1.
+1429210365: User UBLADE(0) tried to delete message 9, but it does not exist.
+1429210397: User UBLADE(0) has deleted message 12.
+1429210402: User UBLADE(0) has requested all messages.
+1429210402: 	Sending user UBLADE(0) 2 message(s).
+1429210415: User UBLADE(0) inserted a message at unused index 12 with content "a"
+1429210428: User UBLADE(0) has requested all messages.
+1429210428: 	Sending user UBLADE(0) 3 message(s).
+1429210434: User UBLADE(0) has requested message 3.
+1429210441: User UBLADE(1) requested message 3, but it belongs to user 0.
+1429210543: User UBLADE(0) tried to delete a message with an invalid index (100).
+1429210559: User UBLADE(1) has requested to quit.
+1429210559: User UBLADE(1) has successfully quit.
+1429210569: User UBLADE(0) requested message 2, but it belongs to user 1.
+1429210592: User UBLADE(0) tried to delete message 7, but it belongs to user 1.
+1429210599: User UBLADE(0) has requested all messages.
+1429210599: 	Sending user UBLADE(0) 3 message(s).
+1429210604: New user! Name=UBLADE
+1429210604: 	User UBLADE(1) successfully connectd!
+1429210613: User UBLADE(1) has requested all messages.
+1429210613: 	Sending user UBLADE(1) 2 message(s).
+1429210633: User UBLADE(1) has deleted message 2.
+1429210642: User UBLADE(0) inserted a message at unused index 2 with content "mine now!"
+1429210649: User UBLADE(1) has requested to quit.
+1429210649: User UBLADE(1) has successfully quit.
+1429210651: User UBLADE(0) has requested to quit.
+1429210651: User UBLADE(0) has successfully quit.

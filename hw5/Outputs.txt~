@@ -1,0 +1,201 @@
+*** This file contains the results of a few runs of my program
+*** in each run, the program generated 10 threads, each randomly chosen as a withdraw or deposit, and a random amount of money
+*** due to the random nature of the program, I selected runs that help to show possible edge cases
+*** to perform a run like this, simply run './hw5', or to build and run use 'make run'
+***
+*** RUN 1 ***
+[MAIN] Initial Balance: $500.00
+[MAIN] Generating 10 threads...
+[MAIN] Generating deposit thread 0 with a value of 597.00
+[Thread 0] I want to deposit $597.00
+[Thread 0] I have deposited my $597.00; the new balance is $1097.00
+[Thread 0] I am now done with my deposit!
+[MAIN] Generating withdraw thread 1 with a value of 714.00
+[Thread 1] I want to withdraw $714.00
+[Thread 1] I have made my withdrawl, and there is now $383.00 remaining
+[Thread 1] Withdraw finished!
+[MAIN] Generating deposit thread 2 with a value of 368.00
+[Thread 2] I want to deposit $368.00
+[Thread 2] I have deposited my $368.00; the new balance is $751.00
+[Thread 2] I am now done with my deposit!
+[MAIN] Generating withdraw thread 3 with a value of 448.00
+[Thread 3] I want to withdraw $448.00
+[Thread 3] I have made my withdrawl, and there is now $303.00 remaining
+[Thread 3] Withdraw finished!
+[MAIN] Generating deposit thread 4 with a value of 367.00
+[Thread 4] I want to deposit $367.00
+[Thread 4] I have deposited my $367.00; the new balance is $670.00
+[Thread 4] I am now done with my deposit!
+[MAIN] Generating withdraw thread 5 with a value of 662.00
+[Thread 5] I want to withdraw $662.00
+[Thread 5] I have made my withdrawl, and there is now $8.00 remaining
+[Thread 5] Withdraw finished!
+[MAIN] Generating withdraw thread 6 with a value of 617.00
+[Thread 6] I want to withdraw $617.00
+[Thread 6] There is only $8.00 left and I want to withdraw $617.00!
+[Thread 6] Now $609.00 is needed, I will wait for a deposit
+[MAIN] Generating withdraw thread 7 with a value of 583.00
+[Thread 7] I want to withdraw $583.00
+[Thread 7] Somebody is already waiting to withdraw, I must wait
+[MAIN] Generating deposit thread 8 with a value of 632.00
+[Thread 8] I want to deposit $632.00
+[Thread 8] I have deposited my $632.00; the new balance is $640.00
+[Thread 8] signaling deposit...
+[Thread 8] After my deposit, $0.00 is needed
+[Thread 8] I am now done with my deposit!
+[Thread 6] I have made my withdrawl, and there is now $23.00 remaining
+[Thread 6] Withdraw finished!
+[Thread 7] There is only $23.00 left and I want to withdraw $583.00!
+[Thread 7] Now $560.00 is needed, I will wait for a deposit
+[MAIN] Generating withdraw thread 9 with a value of 408.00
+[Thread 9] I want to withdraw $408.00
+[Thread 9] Somebody is already waiting to withdraw, I must wait
+[MAIN] All threads have been generated, Generating an extra one that will deposit $100000000 to ensure that all withdrawl threads terminate
+[MAIN] Done generating threads, now waiting for them to finish...
+[Thread -1] I want to deposit $100000000.00
+[Thread -1] I have deposited my $100000000.00; the new balance is $100000024.00
+[Thread -1] signaling deposit...
+[Thread -1] After my deposit, $0.00 is needed
+[Thread -1] I am now done with my deposit!
+[Thread 7] I have made my withdrawl, and there is now $99999440.00 remaining
+[Thread 7] Withdraw finished!
+[Thread 9] I have made my withdrawl, and there is now $99999032.00 remaining
+[Thread 9] Withdraw finished!
+[MAIN] All threads have finished, cleaning up and returning...
+*** END OF RUN 1 ***
+
+*** RUN 2 ***
+[MAIN] Initial Balance: $500.00
+[MAIN] Generating 10 threads...
+[MAIN] Generating withdraw thread 0 with a value of 242.00
+[Thread 0] I want to withdraw $242.00
+[Thread 0] I have made my withdrawl, and there is now $258.00 remaining
+[Thread 0] Withdraw finished!
+[MAIN] Generating withdraw thread 1 with a value of 595.00
+[Thread 1] I want to withdraw $595.00
+[Thread 1] There is only $258.00 left and I want to withdraw $595.00!
+[Thread 1] Now $337.00 is needed, I will wait for a deposit
+[MAIN] Generating withdraw thread 2 with a value of 655.00
+[Thread 2] I want to withdraw $655.00
+[Thread 2] Somebody is already waiting to withdraw, I must wait
+[MAIN] Generating withdraw thread 3 with a value of 296.00
+[Thread 3] I want to withdraw $296.00
+[Thread 3] Somebody is already waiting to withdraw, I must wait
+[MAIN] Generating withdraw thread 4 with a value of 6.00
+[Thread 4] I want to withdraw $6.00
+[Thread 4] Somebody is already waiting to withdraw, I must wait
+[MAIN] Generating withdraw thread 5 with a value of 691.00
+[Thread 5] I want to withdraw $691.00
+[Thread 5] Somebody is already waiting to withdraw, I must wait
+[MAIN] Generating withdraw thread 6 with a value of 171.00
+[Thread 6] I want to withdraw $171.00
+[Thread 6] Somebody is already waiting to withdraw, I must wait
+[MAIN] Generating deposit thread 7 with a value of 499.00
+[Thread 7] I want to deposit $499.00
+[Thread 7] I have deposited my $499.00; the new balance is $757.00
+[Thread 7] signaling deposit...
+[Thread 7] After my deposit, $0.00 is needed
+[Thread 7] I am now done with my deposit!
+[Thread 1] I have made my withdrawl, and there is now $162.00 remaining
+[Thread 1] Withdraw finished!
+[Thread 2] There is only $162.00 left and I want to withdraw $655.00!
+[Thread 2] Now $493.00 is needed, I will wait for a deposit
+[MAIN] Generating deposit thread 8 with a value of 720.00
+[Thread 8] I want to deposit $720.00
+[Thread 8] I have deposited my $720.00; the new balance is $882.00
+[Thread 8] signaling deposit...
+[Thread 8] After my deposit, $0.00 is needed
+[Thread 8] I am now done with my deposit!
+[Thread 2] I have made my withdrawl, and there is now $227.00 remaining
+[Thread 2] Withdraw finished!
+[Thread 3] There is only $227.00 left and I want to withdraw $296.00!
+[Thread 3] Now $69.00 is needed, I will wait for a deposit
+[MAIN] Generating withdraw thread 9 with a value of 433.00
+[Thread 9] I want to withdraw $433.00
+[Thread 9] Somebody is already waiting to withdraw, I must wait
+[MAIN] All threads have been generated, Generating an extra one that will deposit $100000000 to ensure that all withdrawl threads terminate
+[MAIN] Done generating threads, now waiting for them to finish...
+[Thread -1] I want to deposit $100000000.00
+[Thread -1] I have deposited my $100000000.00; the new balance is $100000224.00
+[Thread -1] signaling deposit...
+[Thread -1] After my deposit, $0.00 is needed
+[Thread -1] I am now done with my deposit!
+[Thread 3] I have made my withdrawl, and there is now $99999928.00 remaining
+[Thread 3] Withdraw finished!
+[Thread 4] I have made my withdrawl, and there is now $99999920.00 remaining
+[Thread 4] Withdraw finished!
+[Thread 5] I have made my withdrawl, and there is now $99999232.00 remaining
+[Thread 5] Withdraw finished!
+[Thread 6] I have made my withdrawl, and there is now $99999064.00 remaining
+[Thread 6] Withdraw finished!
+[Thread 9] I have made my withdrawl, and there is now $99998632.00 remaining
+[Thread 9] Withdraw finished!
+[MAIN] All threads have finished, cleaning up and returning...
+*** END OF RUN 2 ***
+
+*** RUN 3 ***
+[MAIN] Initial Balance: $500.00
+[MAIN] Generating 10 threads...
+[MAIN] Generating deposit thread 0 with a value of 489.00
+[Thread 0] I want to deposit $489.00
+[Thread 0] I have deposited my $489.00; the new balance is $989.00
+[Thread 0] I am now done with my deposit!
+[MAIN] Generating withdraw thread 1 with a value of 455.00
+[Thread 1] I want to withdraw $455.00
+[Thread 1] I have made my withdrawl, and there is now $534.00 remaining
+[Thread 1] Withdraw finished!
+[MAIN] Generating withdraw thread 2 with a value of 591.00
+[Thread 2] I want to withdraw $591.00
+[Thread 2] There is only $534.00 left and I want to withdraw $591.00!
+[Thread 2] Now $57.00 is needed, I will wait for a deposit
+[MAIN] Generating withdraw thread 3 with a value of 522.00
+[Thread 3] I want to withdraw $522.00
+[Thread 3] Somebody is already waiting to withdraw, I must wait
+[MAIN] Generating deposit thread 4 with a value of 269.00
+[Thread 4] I want to deposit $269.00
+[Thread 4] I have deposited my $269.00; the new balance is $803.00
+[Thread 4] signaling deposit...
+[Thread 4] After my deposit, $0.00 is needed
+[Thread 4] I am now done with my deposit!
+[Thread 2] I have made my withdrawl, and there is now $212.00 remaining
+[Thread 2] Withdraw finished!
+[Thread 3] There is only $212.00 left and I want to withdraw $522.00!
+[Thread 3] Now $310.00 is needed, I will wait for a deposit
+[MAIN] Generating deposit thread 5 with a value of 67.00
+[Thread 5] I want to deposit $67.00
+[Thread 5] I have deposited my $67.00; the new balance is $279.00
+[Thread 5] After my deposit, $243.00 is needed
+[Thread 5] I am now done with my deposit!
+[MAIN] Generating deposit thread 6 with a value of 730.00
+[Thread 6] I want to deposit $730.00
+[Thread 6] I have deposited my $730.00; the new balance is $1009.00
+[Thread 6] signaling deposit...
+[Thread 6] After my deposit, $0.00 is needed
+[Thread 6] I am now done with my deposit!
+[Thread 3] I have made my withdrawl, and there is now $487.00 remaining
+[Thread 3] Withdraw finished!
+[MAIN] Generating withdraw thread 7 with a value of 384.00
+[Thread 7] I want to withdraw $384.00
+[Thread 7] I have made my withdrawl, and there is now $103.00 remaining
+[Thread 7] Withdraw finished!
+[MAIN] Generating withdraw thread 8 with a value of 346.00
+[Thread 8] I want to withdraw $346.00
+[Thread 8] There is only $103.00 left and I want to withdraw $346.00!
+[Thread 8] Now $243.00 is needed, I will wait for a deposit
+[MAIN] Generating withdraw thread 9 with a value of 178.00
+[Thread 9] I want to withdraw $178.00
+[Thread 9] Somebody is already waiting to withdraw, I must wait
+[MAIN] All threads have been generated, Generating an extra one that will deposit $100000000 to ensure that all withdrawl threads terminate
+[MAIN] Done generating threads, now waiting for them to finish...
+[Thread -1] I want to deposit $100000000.00
+[Thread -1] I have deposited my $100000000.00; the new balance is $100000104.00
+[Thread -1] signaling deposit...
+[Thread -1] After my deposit, $0.00 is needed
+[Thread -1] I am now done with my deposit!
+[Thread 8] I have made my withdrawl, and there is now $99999760.00 remaining
+[Thread 8] Withdraw finished!
+[Thread 9] I have made my withdrawl, and there is now $99999584.00 remaining
+[Thread 9] Withdraw finished!
+[MAIN] All threads have finished, cleaning up and returning...
+*** END OF RUN 3 ***
+

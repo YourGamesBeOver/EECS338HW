@@ -1,0 +1,8 @@
+HOW TO RUN:
+main requires arguments.  run it without any arguments for an explination
+
+or you can just do:
+
+make test
+
+in order to run the tests that produced Output.txt

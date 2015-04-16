@@ -1,0 +1,85 @@
+This is Client 0's output from a test run
+You'll have to look at Output-Server.txt in order to see the order of events in relation to client 1
+
+steven@UBLADE:~/eecs338/hw6$ ./Client localhost
+I am a client running on UBLADE
+Connecting to localhost...
+Sending initial Start() command...
+Recieved user id 0 from the server.
+
+Ready. Enter a command, or 'help' for a list of commands.
+>insert 0 msg0
+Sending insert command with messageNumber=0, and message=msg0
+Response: Success
+>insert 12 msg12
+Sending insert command with messageNumber=12, and message=msg12
+Response: Success
+>insert 100 msg100
+Sending insert command with messageNumber=100, and message=msg100
+Response: Error: Invalid Message Number
+>insert 3 msg3
+Sending insert command with messageNumber=3, and message=msg3
+Response: Success
+>list
+Sending list_all command
+Response:
+	0: "msg0"
+	3: "msg3"
+	12: "msg12"
+>list
+Sending list_all command
+Response:
+	0: "msg0"
+	3: "msg3"
+	12: "msg12"
+>delete 2
+Sending delete command with messageNumber=2
+Response: Error: Permission Denied; attepmted to access a message that belongs to another user
+>delete 9
+Sending delete command with messageNumber=9
+Response: Error: Message not found
+>delete 12 
+Sending delete command with messageNumber=12
+Response: Success
+>listall
+Invaid command; enter 'help' for a list of commands.
+>list
+Sending list_all command
+Response:
+	0: "msg0"
+	3: "msg3"
+>insert 12 a
+Sending insert command with messageNumber=12, and message=a
+Response: Success
+>list
+Sending list_all command
+Response:
+	0: "msg0"
+	3: "msg3"
+	12: "a"
+>retrieve 3
+Sending retrieve command with messageNumber=3
+Response: Success
+	Message: msg3
+>delete 100
+Sending delete command with messageNumber=100
+Response: Error: Invalid Message Number
+>retrieve 2
+Sending retrieve command with messageNumber=2
+Response: Error: Permission Denied; attepmted to access a message that belongs to another user
+>delete 7
+Sending delete command with messageNumber=7
+Response: Error: Permission Denied; attepmted to access a message that belongs to another user
+>list
+Sending list_all command
+Response:
+	0: "msg0"
+	3: "msg3"
+	12: "a"
+>insert 2 mine now!
+Sending insert command with messageNumber=2, and message=mine now!
+Response: Success
+>quit
+Sending quit command
+Response: Success
+

@@ -1,0 +1,19 @@
+#ifndef _MAILBOX_COMMON_H
+#define _MAILBOX_COMMON_H
+
+#define MAX_USERS 20 //20 user max
+#define MAIL_BOX_SIZE 20 //300 messages will be stored
+#define HOST_NAME_LENGTH 20
+#define MESSAGE_LENGTH 80
+
+
+#define OK 0
+#define ERROR -1
+#define ERROR_PERMISSION -2
+#define ERROR_INVALID_MESSAGE_NUMBER -3
+#define ERROR_MESSAGE_NOT_FOUND -4
+#define ERROR_USER_ID_NOT_FOUND -5
+#define ERROR_USER_NAME_ID_NO_MATCH -6
+#define ERROR_TOO_MANY_USERS -7
+
+#endif /* _MAILBOX_COMMON_H */
